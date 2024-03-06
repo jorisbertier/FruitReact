@@ -9,6 +9,24 @@ function App() {
     {id: 3, nom: 'fraise'},
   ])
 
+  const [newFruit, setNewFruit] = useState('')
+
+  const handleChange = (event) => {
+    // console.log(event.target.value)
+    setNewFruit(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    //1 copie du state
+    const copyFruits = [...fruits]
+    // manipuler
+    const id = new Date().getTime();
+    const nom = newFruit;
+    copyFruits.push({id: id, nom: nom})
+    //setter
+    setFruits(copyFruits)
+  }
 
   const handleClick = (id) => {
     // alert(fruits.nom);
@@ -30,6 +48,10 @@ function App() {
           <button onClick={() => handleClick(fruit.id)}>X</button>
         </li> )}
       </ul>
+      <form action='submit' onSubmit={(e) => handleSubmit(e)}>
+        <input placeholder='ajoute un fruit' onChange={handleChange}></input>
+        <button>add</button>
+      </form>
     </div>
   );
 }
