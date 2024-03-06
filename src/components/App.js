@@ -1,5 +1,6 @@
 import '../styles/App.css'
 import { useState } from 'react'
+import Fruit from './Fruit'
 
 function App() {
 
@@ -28,7 +29,6 @@ function App() {
     console.log(copyFruits)
     // setter
     setFruits(copyFruits)
-    setAddFruit('')
   }
 
   const handleDelete = (id) => {
@@ -46,10 +46,12 @@ function App() {
   return (
     <div className="App">
       <ul>
-        {fruits.map((fruit, index) =>
-        <li key={index}>{fruit.nom}
-          <button onClick={() => handleDelete(fruit.id)}>X</button>
-        </li> )}
+      {fruits.map((fruit, index) =>
+        <Fruit
+        handleDelete={handleDelete}
+        fruit={fruit}
+        index={index}/>
+        )}
       </ul>
       <form type='submit' onSubmit={handleSubmit}>
         <input onChange={handleChange}></input>
