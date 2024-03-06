@@ -18,18 +18,20 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // copy
+    //copy
     const copyFruits = [...fruits]
-    // manipuler
+
+    //maniopuler
     const id = new Date().getTime()
     const nom = addFruit;
     copyFruits.push({id: id, nom: nom})
-    //setter
-    setFruits(copyFruits);
-    setAddFruit("");
+    console.log(copyFruits)
+    // setter
+    setFruits(copyFruits)
+    setAddFruit('')
   }
 
-  const handleClick = (id) => {
+  const handleDelete = (id) => {
     // alert(fruits.nom);
     //1 copie du state
 
@@ -46,10 +48,10 @@ function App() {
       <ul>
         {fruits.map((fruit, index) =>
         <li key={index}>{fruit.nom}
-          <button onClick={() => handleClick(fruit.id)}>X</button>
+          <button onClick={() => handleDelete(fruit.id)}>X</button>
         </li> )}
       </ul>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form type='submit' onSubmit={handleSubmit}>
         <input onChange={handleChange}></input>
         <button>Add</button>
       </form>
