@@ -1,5 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
+import '../styles/Form.css'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 export const Form = ({fruits, setFruits}) => {
 const [addFruit, setAddFruit] = useState('')
@@ -29,8 +33,8 @@ const [addFruit, setAddFruit] = useState('')
   
     return (
     <form type='submit' onSubmit={handleSubmit}>
-        <input onChange={handleChange}></input>
-        <button>Add</button>
+        <TextField onChange={handleChange} id="outlined-basic" label="Field fruit" variant="outlined" ></TextField><br></br>
+        <Button variant="contained"  size="small" type='submit'>Add</Button>
       </form>
   )
 }

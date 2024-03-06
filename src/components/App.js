@@ -11,8 +11,6 @@ function App() {
     {id: 3, nom: 'fraise'},
   ])
 
-
-
   const handleDelete = (id) => {
     // alert(fruits.nom);
     //1 copie du state
@@ -27,7 +25,7 @@ function App() {
   
   return (
     <div className="App">
-      <ul>
+      <ul className="Fruit">
       {fruits.map((fruit, index) =>
         <Fruit
         handleDelete={handleDelete}
