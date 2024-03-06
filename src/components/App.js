@@ -25,6 +25,7 @@ function App() {
   
   return (
     <div className="App">
+      <h1>Add your fruit favorite</h1>
       <ul className="Fruit">
       {fruits.map((fruit, index) =>
         <Fruit

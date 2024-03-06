@@ -35,6 +35,7 @@ const [addFruit, setAddFruit] = useState('')
     <form type='submit' onSubmit={handleSubmit}>
         <TextField onChange={handleChange} id="outlined-basic" label="Field fruit" variant="outlined" ></TextField><br></br>
         <Button variant="contained"  size="small" type='submit'>Add</Button>
+        
       </form>
   )
 }

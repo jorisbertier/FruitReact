@@ -1,0 +1,11 @@
+button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
