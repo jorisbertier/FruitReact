@@ -1,6 +1,7 @@
 import '../styles/App.css'
 import { useState } from 'react'
 import Fruit from './Fruit'
+import { Form } from './Form'
 
 function App() {
 
@@ -10,26 +11,7 @@ function App() {
     {id: 3, nom: 'fraise'},
   ])
 
-  const [addFruit, setAddFruit] = useState('')
 
-  const handleChange = (event) => {
-    // console.log(event.target.value)
-    setAddFruit(event.target.value)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    //copy
-    const copyFruits = [...fruits]
-
-    //maniopuler
-    const id = new Date().getTime()
-    const nom = addFruit;
-    copyFruits.push({id: id, nom: nom})
-    console.log(copyFruits)
-    // setter
-    setFruits(copyFruits)
-  }
 
   const handleDelete = (id) => {
     // alert(fruits.nom);
@@ -53,10 +35,8 @@ function App() {
         index={index}/>
         )}
       </ul>
-      <form type='submit' onSubmit={handleSubmit}>
-        <input onChange={handleChange}></input>
-        <button>Add</button>
-      </form>
+      <Form fruits={fruits} setFruits={setFruits}
+      />
     </div>
   );
 }
